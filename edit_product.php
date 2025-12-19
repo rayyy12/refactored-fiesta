@@ -15,7 +15,7 @@ if ($conn === false) {
 $id = $_GET['id'];
 $message = "";
 
-$sql = "SELECT * FROM STRBARAKSMENU WHERE PRODUCTID = '$id'";
+$sql = "SELECT * FROM MENU WHERE PRODUCTID = '$id'";
 $stmt = sqlsrv_query($conn, $sql);
 $product = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC);
 
@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
-    $sql2 = "UPDATE STRBARAKSMENU
+    $sql2 = "UPDATE MENU
              SET PRODUCTNAME='$name',
                  CATEGORY='$category',
                  PRICE='$price',

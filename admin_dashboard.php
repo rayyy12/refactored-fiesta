@@ -36,7 +36,7 @@ try {
     }
     
     // Get total products
-    $productsSql = "SELECT COUNT(*) as total_products FROM STRBARAKSMENU";
+    $productsSql = "SELECT COUNT(*) as total_products FROM MENU";
     $productsResult = sqlsrv_query($conn, $productsSql);
     if ($productsResult !== false) {
         $productsRow = sqlsrv_fetch_array($productsResult, SQLSRV_FETCH_ASSOC);

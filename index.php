@@ -677,7 +677,7 @@ $q = isset($_GET['q']) ? trim($_GET['q']) : '';
     <div class="section-divider"></div>
 
     <?php
-    $catSql = "SELECT DISTINCT CATEGORY FROM STRBARAKSMENU ORDER BY CATEGORY";
+    $catSql = "SELECT DISTINCT CATEGORY FROM MENU ORDER BY CATEGORY";
     $catStmt = sqlsrv_query($conn, $catSql);
     
     $hasResults = false;
@@ -687,11 +687,11 @@ $q = isset($_GET['q']) ? trim($_GET['q']) : '';
       
       if ($q !== '') {
           $like = "%$q%";
-          $sql = "SELECT * FROM STRBARAKSMENU 
+          $sql = "SELECT * FROM MENU 
                   WHERE CATEGORY = '$cat' 
                   AND (PRODUCTNAME LIKE '$like' OR DESCRIPTION LIKE '$like')";
       } else {
-          $sql = "SELECT * FROM STRBARAKSMENU WHERE CATEGORY = '$cat'";
+          $sql = "SELECT * FROM MENU WHERE CATEGORY = '$cat'";
       }
       
       $stmt = sqlsrv_query($conn, $sql);

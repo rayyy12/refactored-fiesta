@@ -14,7 +14,7 @@ if ($conn === false) {
 
 if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
     $id = (int)$_POST['id'];
-    $sql = "SELECT PRODUCTID, PRODUCTNAME, PRICE, IMAGEPATH FROM STRBARAKSMENU WHERE PRODUCTID = '$id'";
+    $sql = "SELECT PRODUCTID, PRODUCTNAME, PRICE, IMAGEPATH FROM MENU WHERE PRODUCTID = '$id'";
     $result = sqlsrv_query($conn, $sql);
     if($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)) {
         $item = [

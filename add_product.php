@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
 
             if (move_uploaded_file($_FILES["product_image"]["tmp_name"], $targetfilepath)) {
-                $sql = "INSERT INTO STRBARAKSMENU (PRODUCTNAME, CATEGORY, PRICE, DESCRIPTION, IMAGEPATH)
+                $sql = "INSERT INTO MENU (PRODUCTNAME, CATEGORY, PRICE, DESCRIPTION, IMAGEPATH)
                         VALUES (?, ?, ?, ?, ?)";
                 $params = array($name, $category, $price, $description, $targetfilepath);
                 $stmt = sqlsrv_query($conn, $sql, $params);

@@ -605,7 +605,7 @@ if ($conn === false) {
         COUNT(DISTINCT CATEGORY) as categories,
         SUM(PRICE) as total_value,
         AVG(PRICE) as avg_price
-        FROM STRBARAKSMENU";
+        FROM MENU";
     $statsResult = sqlsrv_query($conn, $statsSql);
     $stats = sqlsrv_fetch_array($statsResult, SQLSRV_FETCH_ASSOC);
     ?>
@@ -631,7 +631,7 @@ if ($conn === false) {
 
   <div class="products-table-container">
     <?php
-    $sql = "SELECT * FROM STRBARAKSMENU ORDER BY PRODUCTNAME";
+    $sql = "SELECT * FROM MENU ORDER BY PRODUCTNAME";
     $stmt = sqlsrv_query($conn, $sql);
     $hasProducts = sqlsrv_has_rows($stmt);
     

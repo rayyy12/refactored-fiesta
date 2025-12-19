@@ -30,7 +30,7 @@ if ($conn === false) {
 }
 
 // Prepare and execute DELETE query using parameterized query
-$sql = "DELETE FROM STRBARAKSMENU WHERE PRODUCTID = ?";
+$sql = "DELETE FROM MENU WHERE PRODUCTID = ?";
 $params = array($id);
 $stmt = sqlsrv_query($conn, $sql, $params);
 
